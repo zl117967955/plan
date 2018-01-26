@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class  name="p2p.model.TNtfShqSmsHistoryDTO"  table="NTF_SHQ_SMS_HISTORY" >
+		<comment>NTF_SHQ_SMS_HISTORY</comment>
+		<id name="id"  type="java.lang.String" >
+			<column  name="ID"  length="40"  />
+			<generator class="uuid.hex" />
+		</id>
+		<property  name="fixedFee"  type="java.lang.String" >
+			<column  name="FIXED_FEE"  length="6" >
+				<comment>FIXED_FEE</comment>
+			</column>
+		</property>
+
+		<property  name="accessSystemDep"  type="java.lang.String" >
+			<column  name="ACCESS_SYSTEM_DEP"  length="50" >
+				<comment>ACCESS_SYSTEM_DEP</comment>
+			</column>
+		</property>
+
+		<property  name="mtSeq"  type="java.lang.String" >
+			<column  name="MT_SEQ"  length="40" >
+				<comment>MT_SEQ</comment>
+			</column>
+		</property>
+
+		<property  name="accessAccount"  type="java.lang.String" >
+			<column  name="ACCESS_ACCOUNT"  length="50" >
+				<comment>ACCESS_ACCOUNT</comment>
+			</column>
+		</property>
+
+		<property  name="messageId"  type="java.lang.String" >
+			<column  name="MESSAGE_ID"  length="50" >
+				<comment>MESSAGE_ID</comment>
+			</column>
+		</property>
+
+		<property  name="msgId"  type="java.lang.String" >
+			<column  name="MSG_ID"  length="30" >
+				<comment>MSG_ID</comment>
+			</column>
+		</property>
+
+		<property  name="taskname"  type="java.lang.String" >
+			<column  name="TASKNAME"  length="200" >
+				<comment>TASKNAME</comment>
+			</column>
+		</property>
+
+		<property  name="planSeq"  type="java.lang.String" >
+			<column  name="PLAN_SEQ"  length="15" >
+				<comment>PLAN_SEQ</comment>
+			</column>
+		</property>
+
+		<property  name="sendPriority"  type="java.lang.Double" >
+			<column  name="SEND_PRIORITY"  length="1" >
+				<comment>SEND_PRIORITY</comment>
+			</column>
+		</property>
+
+		<property  name="mtServType"  type="java.lang.String" >
+			<column  name="MT_SERV_TYPE"  length="30" >
+				<comment>MT_SERV_TYPE</comment>
+			</column>
+		</property>
+
+		<property  name="msgFormat"  type="java.lang.Double" >
+			<column  name="MSG_FORMAT"  length="2" >
+				<comment>MSG_FORMAT</comment>
+			</column>
+		</property>
+
+		<property  name="bizname"  type="java.lang.String" >
+			<column  name="BIZNAME"  length="40" >
+				<comment>BIZNAME</comment>
+			</column>
+		</property>
+
+		<property  name="feeType"  type="java.lang.String" >
+			<column  name="FEE_TYPE"  length="4" >
+				<comment>FEE_TYPE</comment>
+			</column>
+		</property>
+
+		<property  name="msgContent"  type="java.lang.String" >
+			<column  name="MSG_CONTENT"  length="2000" >
+				<comment>MSG_CONTENT</comment>
+			</column>
+		</property>
+
+		<property  name="encode"  type="java.lang.String" >
+			<column  name="ENCODE"  length="40" >
+				<comment>ENCODE</comment>
+			</column>
+		</property>
+
+		<property  name="remoteip"  type="java.lang.String" >
+			<column  name="REMOTEIP"  length="40" >
+				<comment>REMOTEIP</comment>
+			</column>
+		</property>
+
+		<property  name="makeTime"  type="java.util.Date" >
+			<column  name="MAKE_TIME" >
+				<comment>MAKE_TIME</comment>
+			</column>
+		</property>
+
+		<property  name="requireApply"  type="java.lang.Double" >
+			<column  name="REQUIRE_APPLY"  length="1" >
+				<comment>REQUIRE_APPLY</comment>
+			</column>
+		</property>
+
+		<property  name="feeUserTermid"  type="java.lang.String" >
+			<column  name="FEE_USER_TERMID"  length="32" >
+				<comment>FEE_USER_TERMID</comment>
+			</column>
+		</property>
+
+		<property  name="failSentTimes"  type="java.lang.Double" >
+			<column  name="FAIL_SENT_TIMES"  length="2" >
+				<comment>FAIL_SENT_TIMES</comment>
+			</column>
+		</property>
+
+		<property  name="serviceId"  type="java.lang.String" >
+			<column  name="SERVICE_ID"  length="10" >
+				<comment>SERVICE_ID</comment>
+			</column>
+		</property>
+
+		<property  name="linkId"  type="java.lang.String" >
+			<column  name="LINK_ID"  length="40" >
+				<comment>LINK_ID</comment>
+			</column>
+		</property>
+
+		<property  name="recvTime"  type="java.util.Date" >
+			<column  name="RECV_TIME" >
+				<comment>RECV_TIME</comment>
+			</column>
+		</property>
+
+		<property  name="haveSentTimes"  type="java.lang.Double" >
+			<column  name="HAVE_SENT_TIMES"  length="4" >
+				<comment>HAVE_SENT_TIMES</comment>
+			</column>
+		</property>
+
+		<property  name="destTermid"  type="java.lang.String" >
+			<column  name="DEST_TERMID"  length="32" >
+				<comment>DEST_TERMID</comment>
+			</column>
+		</property>
+
+		<property  name="sendStatus"  type="java.lang.String" >
+			<column  name="SEND_STATUS"  length="2" >
+				<comment>SEND_STATUS</comment>
+			</column>
+		</property>
+
+		<property  name="smsStatus"  type="java.lang.String" >
+			<column  name="SMS_STATUS"  length="10" >
+				<comment>SMS_STATUS</comment>
+			</column>
+		</property>
+
+		<property  name="accessPassword"  type="java.lang.String" >
+			<column  name="ACCESS_PASSWORD"  length="50" >
+				<comment>ACCESS_PASSWORD</comment>
+			</column>
+		</property>
+
+		<property  name="sp"  type="java.lang.String" >
+			<column  name="SP"  length="40" >
+				<comment>SP</comment>
+			</column>
+		</property>
+
+		<property  name="sendTime"  type="java.util.Date" >
+			<column  name="SEND_TIME" >
+				<comment>SEND_TIME</comment>
+			</column>
+		</property>
+
+		<property  name="recvStatus"  type="java.lang.String" >
+			<column  name="RECV_STATUS"  length="12" >
+				<comment>RECV_STATUS</comment>
+			</column>
+		</property>
+
+		<property  name="smsSendingTime"  type="java.util.Date" >
+			<column  name="SMS_SENDING_TIME" >
+				<comment>SMS_SENDING_TIME</comment>
+			</column>
+		</property>
+
+		<property  name="smsBuildTime"  type="java.util.Date" >
+			<column  name="SMS_BUILD_TIME" >
+				<comment>SMS_BUILD_TIME</comment>
+			</column>
+		</property>
+
+		<property  name="feeCode"  type="java.lang.String" >
+			<column  name="FEE_CODE"  length="6" >
+				<comment>FEE_CODE</comment>
+			</column>
+		</property>
+
+		<property  name="bizcode"  type="java.lang.String" >
+			<column  name="BIZCODE"  length="40" >
+				<comment>BIZCODE</comment>
+			</column>
+		</property>
+
+		<property  name="feeUserType"  type="java.lang.String" >
+			<column  name="FEE_USER_TYPE"  length="2" >
+				<comment>FEE_USER_TYPE</comment>
+			</column>
+		</property>
+
+		<property  name="lastSentTime"  type="java.util.Date" >
+			<column  name="LAST_SENT_TIME" >
+				<comment>LAST_SENT_TIME</comment>
+			</column>
+		</property>
+
+		<property  name="srcTermid"  type="java.lang.String" >
+			<column  name="SRC_TERMID"  length="32" >
+				<comment>SRC_TERMID</comment>
+			</column>
+		</property>
+
+		<property  name="smsSession"  type="java.lang.String" >
+			<column  name="SMS_SESSION"  length="40" >
+				<comment>SMS_SESSION</comment>
+			</column>
+		</property>
+
+		<property  name="smsSendTime"  type="java.util.Date" >
+			<column  name="SMS_SEND_TIME" >
+				<comment>SMS_SEND_TIME</comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class  name="p2p.model.TNtfSHSmsMtBakDTO"  table="NTF_SH_SMS_MT_BAK" >
+		<comment>MT短信话单日志表（在数据库中按月份分区存储)</comment>
+		<id name="id"  type="java.lang.String" >
+			<column  name="ID"  length="40"  />
+			<generator class="uuid.hex" />
+		</id>
+		<property  name="sp"  type="java.lang.String" >
+			<column  name="SP"  length="40" >
+				<comment>短信服务码,由统一通知平台提供</comment>
+			</column>
+		</property>
+
+		<property  name="msgContent"  type="java.lang.String" >
+			<column  name="MSG_CONTENT"  length="2000" >
+				<comment>用户上行或下行的短信内容</comment>
+			</column>
+		</property>
+
+		<property  name="recvStatus"  type="java.lang.String" >
+			<column  name="RECV_STATUS"  length="12" >
+				<comment>0成功，1失败</comment>
+			</column>
+		</property>
+
+		<property  name="accessAccount"  type="java.lang.String" >
+			<column  name="ACCESS_ACCOUNT"  length="50" >
+				<comment>接入账户</comment>
+			</column>
+		</property>
+
+		<property  name="mtServType"  type="java.lang.String" >
+			<column  name="MT_SERV_TYPE"  length="30" >
+				<comment>MT业务类型：1：MO引起的MT，2：短信营业厅群发的MT，3:10000号，4：计费，5：VC</comment>
+			</column>
+		</property>
+
+		<property  name="recvTime"  type="java.util.Date" >
+			<column  name="RECV_TIME" >
+				<comment>RECV_TIME</comment>
+			</column>
+		</property>
+
+		<property  name="sendPriority"  type="java.lang.Long" >
+			<column  name="SEND_PRIORITY"  length="1" >
+				<comment>SEND_PRIORITY</comment>
+			</column>
+		</property>
+
+		<property  name="msgId"  type="java.lang.String" >
+			<column  name="MSG_ID"  length="30" >
+				<comment>外部短信网关产生的流水号</comment>
+			</column>
+		</property>
+
+		<property  name="sendStatus"  type="java.lang.String" >
+			<column  name="SEND_STATUS"  length="2" >
+				<comment>发送状态，0成功，1失败</comment>
+			</column>
+		</property>
+
+		<property  name="serviceId"  type="java.lang.String" >
+			<column  name="SERVICE_ID"  length="10" >
+				<comment>"业务代码，用于固定网业务。 对于MO消息或点对点短消息，该字段无效； 对于MT消息，该字段表示业务代码，是该条短消息所属的业务类别，由数字、字母和符号组合而成。对于从WEB上发送的点对点短消息，要求业务代码为 “PC2P”，其它业务代码由SP自定义。 "</comment>
+			</column>
+		</property>
+
+		<property  name="failSentTimes"  type="java.lang.Long" >
+			<column  name="FAIL_SENT_TIMES"  length="2" >
+				<comment>失败发送次数</comment>
+			</column>
+		</property>
+
+		<property  name="srcTermid"  type="java.lang.String" >
+			<column  name="SRC_TERMID"  length="32" >
+				<comment>用户手机号码</comment>
+			</column>
+		</property>
+
+		<property  name="lastSentTime"  type="java.util.Date" >
+			<column  name="LAST_SENT_TIME" >
+				<comment>最后一次发送时间</comment>
+			</column>
+		</property>
+
+		<property  name="feeUserType"  type="java.lang.String" >
+			<column  name="FEE_USER_TYPE"  length="2" >
+				<comment>"计费用户类型。 0＝对短消息接收方计费； 1＝对短消息发送方计费； 2＝对SP计费； 3＝表示本字段无效，对谁计费参见ChargeTermID或ChargeTermPseudo 字段。 "</comment>
+			</column>
+		</property>
+
+		<property  name="makeTime"  type="java.util.Date" >
+			<column  name="MAKE_TIME" >
+				<comment>MAKE_TIME</comment>
+			</column>
+		</property>
+
+		<property  name="destTermid"  type="java.lang.String" >
+			<column  name="DEST_TERMID"  length="32" >
+				<comment>短信接入号，上行的目的号码或下行的源号码</comment>
+			</column>
+		</property>
+
+		<property  name="sendTime"  type="java.util.Date" >
+			<column  name="SEND_TIME" >
+				<comment>接收到用户短信时间</comment>
+			</column>
+		</property>
+
+		<property  name="accessSystemDep"  type="java.lang.String" >
+			<column  name="ACCESS_SYSTEM_DEP"  length="50" >
+				<comment>接入系统编号</comment>
+			</column>
+		</property>
+
+		<property  name="haveSentTimes"  type="java.lang.Long" >
+			<column  name="HAVE_SENT_TIMES"  length="4" >
+				<comment>已发送次数</comment>
+			</column>
+		</property>
+
+		<property  name="feeType"  type="java.lang.String" >
+			<column  name="FEE_TYPE"  length="4" >
+				<comment>"对计费用户采取的收费类型。 对于MO消息或点对点短消息，该字段无效。对于MT消息，该字段用法如下： 00＝免费，此时FixedFee和FeeCode无效； 01＝按条计信息费，此时FeeCode表示每条费用，FixedFee无效； 02＝按包月收取信息费，此时FeeCode无效，FixedFee表示包月费用； 03＝按封顶收取信息费，若按条收费的费用总和达到或超过封顶费后，则按照封顶费用收取信息费；若按条收费的费用总和没有达到封顶费用，则按照每条费用总和收取信息费。FeeCode表示每条费用，FixedFee表示封顶费用。 其它保留。 "</comment>
+			</column>
+		</property>
+
+		<property  name="remoteip"  type="java.lang.String" >
+			<column  name="REMOTEIP"  length="40" >
+				<comment>接入系统IP</comment>
+			</column>
+		</property>
+
+		<property  name="accessPassword"  type="java.lang.String" >
+			<column  name="ACCESS_PASSWORD"  length="50" >
+				<comment>接入密码</comment>
+			</column>
+		</property>
+
+		<property  name="feeCode"  type="java.lang.String" >
+			<column  name="FEE_CODE"  length="6" >
+				<comment>资费代码，每条短消息费率，单位为“分”。</comment>
+			</column>
+		</property>
+
+		<property  name="linkId"  type="java.lang.String" >
+			<column  name="LINK_ID"  length="40" >
+				<comment>交易标识，对于用户上行的短信，下行时需要带相同的LinkId</comment>
+			</column>
+		</property>
+
+		<property  name="bizname"  type="java.lang.String" >
+			<column  name="BIZNAME"  length="40" >
+				<comment>业务类别名称,自编，利于区分所请求的各类业务及问题排查</comment>
+			</column>
+		</property>
+
+		<property  name="encode"  type="java.lang.String" >
+			<column  name="ENCODE"  length="40" >
+				<comment>接口编码</comment>
+			</column>
+		</property>
+
+		<property  name="fixedFee"  type="java.lang.String" >
+			<column  name="FIXED_FEE"  length="6" >
+				<comment>短消息的包月费/封顶费，单位为“分”。</comment>
+			</column>
+		</property>
+
+		<property  name="planSeq"  type="java.lang.String" >
+			<column  name="PLAN_SEQ"  length="15" >
+				<comment>短信营业厅群发任务流水号</comment>
+			</column>
+		</property>
+
+		<property  name="taskname"  type="java.lang.String" >
+			<column  name="TASKNAME"  length="200" >
+				<comment>任务名称,自编，利于区分所请求的每一次任务及问题排查</comment>
+			</column>
+		</property>
+
+		<property  name="smsSession"  type="java.lang.String" >
+			<column  name="SMS_SESSION"  length="40" >
+				<comment>会话处理流水号，短信群发时需要用户回复的短信，在发送时需要创建会话</comment>
+			</column>
+		</property>
+
+		<property  name="bizcode"  type="java.lang.String" >
+			<column  name="BIZCODE"  length="40" >
+				<comment>业务类别编码</comment>
+			</column>
+		</property>
+
+		<property  name="requireApply"  type="java.lang.Long" >
+			<column  name="REQUIRE_APPLY"  length="1" >
+				<comment>REQUIRE_APPLY</comment>
+			</column>
+		</property>
+
+		<property  name="mtSeq"  type="java.lang.String" >
+			<column  name="MT_SEQ"  length="40" >
+				<comment>下行短消息流水号（发起短信的用户或目标用户的手机号码+年月日时分秒毫秒时间戳，如1331234567820080808010101001）；在写下行时，在短信处理时获取发送短信数据时由HTTP服务产生，并发送给短信处理程序，主要用于写日志用</comment>
+			</column>
+		</property>
+
+		<property  name="feeUserTermid"  type="java.lang.String" >
+			<column  name="FEE_USER_TERMID"  length="32" >
+				<comment>计费用户号码</comment>
+			</column>
+		</property>
+
+		<property  name="msgFormat"  type="java.lang.Long" >
+			<column  name="MSG_FORMAT"  length="2" >
+				<comment>0＝ASCII编码； 3＝短消息写卡操作； 4＝二进制短消息； 8＝UCS2编码； 15＝GB18030编码； 246（F6）＝(U)SIM相关消息； 其它保留。 对于文字短消息，要求MsgFormat＝15。对于回执消息，要求MsgFormat＝0。</comment>
+			</column>
+		</property>
+
+	</class>
+</hibernate-mapping>
